@@ -59,7 +59,7 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
     //[TestCategory("BusinessComponentsApi Post")]
     //public async Task Given_ABusinessComponentWithAnInvalidName_When_PostIsInvoked_Then_ResponseShouldHaveBadRequestStatusAndMessageShouldContainTheReason()
     //{
-    //  var response = await (await BusinessComponentsController.Post(new BusinessComponent { Name = TestData.InvalidDrugCategoryName, DrugClassIds = new[] { TestData.FirstValidDrugClassId } })).ExecuteAsync(CancellationToken.None);
+    //  var response = await (await BusinessComponentsController.Post(new BusinessComponent { Name = TestData.InvalidBusinessComponentName })).ExecuteAsync(CancellationToken.None);
     //  dynamic responseContent = JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
 
     //  Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
@@ -70,7 +70,7 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
     //[TestCategory("BusinessComponentsApi Post")]
     //public async Task Given_ABusinessComponentWithAnInvalidName_When_PostIsInvoked_Then_CreateShouldNotBeInvoked()
     //{
-    //  await (await BusinessComponentsController.Post(new BusinessComponent { Name = TestData.InvalidDrugCategoryName })).ExecuteAsync(CancellationToken.None);
+    //  await (await BusinessComponentsController.Post(new BusinessComponent { Name = TestData.InvalidBusinessComponentName })).ExecuteAsync(CancellationToken.None);
 
     //  MockBusinessComponentsDal.Verify(m => m.Create(It.IsAny<BusinessComponentDto>()), Times.Never);
     //}
@@ -81,18 +81,18 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
     //[TestCategory("BusinessComponentsApi Put")]
     //public async Task Given_ABusinessComponentWithAnInvalidName_When_PutIsInvoked_Then_ResponseShouldHaveBadRequestStatusAndMessageShouldContainTheReason()
     //{
-    //  var response = await (await BusinessComponentsController.Put(new BusinessComponent { Name = TestData.InvalidDrugCategoryName, DrugClassIds = new[] { TestData.FirstValidDrugClassId } })).ExecuteAsync(CancellationToken.None);
+    //  var response = await (await BusinessComponentsController.Put(new BusinessComponent { Name = TestData.InvalidBusinessComponentName })).ExecuteAsync(CancellationToken.None);
     //  dynamic responseContent = JsonConvert.DeserializeObject(await response.Content.ReadAsStringAsync());
 
     //  Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
-    //  Assert.AreEqual("A drug category is required to have a name.", responseContent.Message.ToString());
+    //  Assert.AreEqual("A business component is required to have a name.", responseContent.Message.ToString());
     //}
 
     //[TestMethod]
     //[TestCategory("BusinessComponentsApi Put")]
     //public async Task Given_ABusinessComponentWithAnInvalidName_When_PutIsInvoked_Then_UpdateShouldNotBeInvoked()
     //{
-    //  await (await BusinessComponentsController.Put(new BusinessComponent { Name = TestData.InvalidDrugCategoryName })).ExecuteAsync(CancellationToken.None);
+    //  await (await BusinessComponentsController.Put(new BusinessComponent { Name = TestData.InvalidBusinessComponentName })).ExecuteAsync(CancellationToken.None);
 
     //  MockBusinessComponentsDal.Verify(m => m.Update(It.IsAny<BusinessComponentDto>()), Times.Never);
     //}

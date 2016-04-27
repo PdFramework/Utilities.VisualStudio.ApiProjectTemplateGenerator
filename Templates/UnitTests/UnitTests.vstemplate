@@ -1,0 +1,36 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>UnitTests</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>PeinearyDevelopment</ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>UnitTests</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>PeinearyDevelopment.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="UnitTests.csproj" File="UnitTests.csproj" ReplaceParameters="true">
+      <Folder Name="Api" TargetFolderName="Api">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$specificconcept$ControllerTests.cs">$specificconcept$ControllerTests.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <Folder Name="DataAccess" TargetFolderName="DataAccess">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$specificconcept$DalTests.cs">$specificconcept$DalTests.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="project.json">project.json</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="TestData.cs">TestData.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="TestUtilities.cs">TestUtilities.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=167e463fe9f95a97</Assembly>
+    <FullClassName>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
