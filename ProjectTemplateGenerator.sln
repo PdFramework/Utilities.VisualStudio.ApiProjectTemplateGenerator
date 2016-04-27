@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Projects\Contr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "Projects\DataAccess\DataAccess.csproj", "{A3461CEF-C165-4BAA-9376-EEDEB76626B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apis", "Projects\Apis\Apis.csproj", "{4D1740CD-5912-46F9-A43D-AB971166BDA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{A3461CEF-C165-4BAA-9376-EEDEB76626B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A3461CEF-C165-4BAA-9376-EEDEB76626B1}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{A3461CEF-C165-4BAA-9376-EEDEB76626B1}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Development|Any CPU.Build.0 = Development|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Production|Any CPU.Build.0 = Production|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.QualityAssurance|Any CPU.ActiveCfg = QualityAssurance|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.QualityAssurance|Any CPU.Build.0 = QualityAssurance|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8}.Staging|Any CPU.Build.0 = Staging|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,5 +95,6 @@ Global
 		{FB9A8435-AADC-43CD-A939-0DF0CAEFACCE} = {F5E57EB6-90C7-499A-AD6F-C0DDD19EB725}
 		{0C995BF5-3EA7-4C9D-80AC-942771B22F59} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
 		{A3461CEF-C165-4BAA-9376-EEDEB76626B1} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
+		{4D1740CD-5912-46F9-A43D-AB971166BDA8} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
 	EndGlobalSection
 EndGlobal
