@@ -1,0 +1,39 @@
+﻿{
+    "dependencies": {
+        "AutoMapper": "4.2.1",
+        "PeinearyDevelopment.Framework.ApiBases.Contracts": "1.0.17",
+        "PeinearyDevelopment.Framework.ApiBases.Data.Entity": "1.0.17",
+        "PeinearyDevelopment.Framework.ApiBases.Data.Entity.UnitTesting": "1.0.17",
+        "PeinearyDevelopment.Framework.ApiBases.DataAccess": "1.0.17",
+        "PeinearyDevelopment.Framework.ApiBases.Web.Http": "1.0.17",
+        "PeinearyDevelopment.Framework.ApiBases.Web.WebActivator": "1.0.17",
+        "PeinearyDevelopment.Framework.Endpoints.ApiClient": "1.0.6",
+        "PeinearyDevelopment.Framework.Endpoints.Contracts": "1.0.6",
+        "PeinearyDevelopment.Framework.Logging.Contracts": "1.0.54",
+        "PeinearyDevelopment.Framework.Logging.NLog.Core": "1.0.54",
+        "PeinearyDevelopment.Framework.Logging.NLog.Web": "1.0.54",
+        "PeinearyDevelopment.Framework.Logging.NLog.Web.WebActivator": "1.0.54",
+        "EntityFramework": "6.1.3",
+        "MassTransit": "3.2.4",
+        "MassTransit.RabbitMQ": "3.2.4",
+        "Microsoft.AspNet.WebApi": "5.2.3",
+        "Microsoft.AspNet.WebApi.Client": "5.2.3",
+        "Microsoft.AspNet.WebApi.Core": "5.2.3",
+        "Microsoft.AspNet.WebApi.WebHost": "5.2.3",
+        "Microsoft.Web.Infrastructure": "1.0.0.0",
+        "Moq": "4.2.1510.2205",
+        "NewId": "2.1.3",
+        "Newtonsoft.Json": "8.0.3",
+        "NLog": "4.2.3",
+        "NLog.Web": "4.2",
+        "RabbitMQ.Client": "3.6.1",
+        "WebActivatorEx": "2.1.0"
+    },
+    "frameworks": {
+        "net461": { }
+    },
+    "runtimes": {
+        "win": { }
+    },
+    "supports": { }
+}
