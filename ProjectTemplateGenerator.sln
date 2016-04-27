@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClients", "Projects\ApiC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "Projects\UnitTests\UnitTests.csproj", "{FB6E5793-FCA8-4EBE-B051-D6DB44C64117}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "Projects\IntegrationTests\IntegrationTests.csproj", "{BB9896ED-7106-4DD0-97C1-978152855893}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,18 @@ Global
 		{FB6E5793-FCA8-4EBE-B051-D6DB44C64117}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FB6E5793-FCA8-4EBE-B051-D6DB44C64117}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{FB6E5793-FCA8-4EBE-B051-D6DB44C64117}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Development|Any CPU.Build.0 = Development|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Production|Any CPU.Build.0 = Production|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.QualityAssurance|Any CPU.ActiveCfg = QualityAssurance|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.QualityAssurance|Any CPU.Build.0 = QualityAssurance|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{BB9896ED-7106-4DD0-97C1-978152855893}.Staging|Any CPU.Build.0 = Staging|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,5 +140,6 @@ Global
 		{4D1740CD-5912-46F9-A43D-AB971166BDA8} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
 		{7BBBF5A0-3FB5-45FA-8AF3-9A90934DBD6C} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
 		{FB6E5793-FCA8-4EBE-B051-D6DB44C64117} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
+		{BB9896ED-7106-4DD0-97C1-978152855893} = {553DA51B-7BB1-4957-A687-C284629CA4B0}
 	EndGlobalSection
 EndGlobal
