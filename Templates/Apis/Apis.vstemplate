@@ -1,0 +1,42 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Apis</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>PeinearyDevelopment</ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Apis</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>PeinearyDevelopment.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="Apis.csproj" File="Apis.csproj" ReplaceParameters="true">
+      <Folder Name="Config" TargetFolderName="Config">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AutoMapperConfig.cs">AutoMapperConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="UnityConfig.cs">UnityConfig.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="WebApiConfig.cs">WebApiConfig.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Controllers" TargetFolderName="Controllers">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$specificconcept$Controller.cs">$specificconcept$Controller.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax">Global.asax</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Global.asax.cs">Global.asax.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="project.json">project.json</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Development.config">Web.Development.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Production.config">Web.Production.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.QualityAssurance.config">Web.QualityAssurance.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Staging.config">Web.Staging.config</ProjectItem>
+    </Project>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=167e463fe9f95a97</Assembly>
+    <FullClassName>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards.Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>

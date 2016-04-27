@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$customnamespace$.ApiClients</id>
+    <version>$version$</version>
+    <authors>$businessname$</authors>
+    <description>The strongly typed wrapper for interacting with the $specificconcept$ api.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="PeinearyDevelopment.Framework.ApiBases.ApiClients" version="1.0.17" />
+        <dependency id="Contracts" version="$version$" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\*.xdt" target="content" />
+    <file src="bin\$configuration$\$customnamespace$.ApiClients.dll" target="lib\net461" />
+    <file src="bin\$configuration$\$customnamespace$.ApiClients.pdb" target="lib\net461" />
+  </files>
+</package>

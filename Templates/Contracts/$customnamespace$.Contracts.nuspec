@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$customnamespace$.Contracts</id>
+    <version>$version$</version>
+    <authors>$businessname$</authors>
+    <description>The contracts for interacting with the $specificconcept$ api.</description>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework="net461">
+        <dependency id="PeinearyDevelopment.Framework.ApiBases.Contracts" version="1.0.17" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\$configuration$\$customnamespace$.Contracts.dll" target="lib\net461" />
+    <file src="bin\$configuration$\$customnamespace$.Contracts.pdb" target="lib\net461" />
+  </files>
+</package>
