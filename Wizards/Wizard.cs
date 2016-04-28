@@ -15,6 +15,8 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
       *****                                                                                                 ******/
     public class Wizard : IWizard
     {
+        public static Dictionary<string, string> GlobalDictionary;
+
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
             try
@@ -33,6 +35,14 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
                 replacementsDictionary.Add("$specificconcept$", specificConcept);
                 replacementsDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
                 replacementsDictionary = CreateSpecificConceptVariations(specificConcept, replacementsDictionary);
+
+                GlobalDictionary.Add("$businessname$", businessName);
+                GlobalDictionary.Add("$broadpurpose$", broadPurpose);
+                GlobalDictionary.Add("$broadconcept$", broadConcept);
+                GlobalDictionary.Add("$exposure$", exposure);
+                GlobalDictionary.Add("$specificconcept$", specificConcept);
+                GlobalDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
+                GlobalDictionary = CreateSpecificConceptVariations(specificConcept, GlobalDictionary);
             }
             catch (Exception exception)
             {
