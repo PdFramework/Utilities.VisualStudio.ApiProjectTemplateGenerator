@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
 
@@ -15,38 +17,62 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
       *****                                                                                                 ******/
     public class Wizard : IWizard
     {
-        public static Dictionary<string, string> GlobalDictionary;
+        public static Dictionary<string, string> ReplacementsDictionary;
 
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
+            string runSilent;
+            if (replacementsDictionary.TryGetValue("$runsilent$", out runSilent) && bool.TrueString.Equals(runSilent, StringComparison.OrdinalIgnoreCase)) return;
+
+            string wizardData;
+            if (!replacementsDictionary.TryGetValue("$wizarddata$", out wizardData)) return;
+
+            if (string.IsNullOrWhiteSpace(wizardData)) return;
+
+            var showInputForm = true;
             try
             {
-                var input = new InputForm();
-                input.ShowDialog();
-                var businessName = input.BusinessNameString;
-                var broadPurpose = input.BroadPurpose;
-                var broadConcept = input.BroadConceptString;
-                var exposure = input.Exposure;
-                var specificConcept = input.SpecificConceptString;
-                replacementsDictionary.Add("$businessname$", businessName);
-                replacementsDictionary.Add("$broadpurpose$", broadPurpose);
-                replacementsDictionary.Add("$broadconcept$", broadConcept);
-                replacementsDictionary.Add("$exposure$", exposure);
-                replacementsDictionary.Add("$specificconcept$", specificConcept);
-                replacementsDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
-                replacementsDictionary = CreateSpecificConceptVariations(specificConcept, replacementsDictionary);
-
-                GlobalDictionary.Add("$businessname$", businessName);
-                GlobalDictionary.Add("$broadpurpose$", broadPurpose);
-                GlobalDictionary.Add("$broadconcept$", broadConcept);
-                GlobalDictionary.Add("$exposure$", exposure);
-                GlobalDictionary.Add("$specificconcept$", specificConcept);
-                GlobalDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
-                GlobalDictionary = CreateSpecificConceptVariations(specificConcept, GlobalDictionary);
+                var document = XDocument.Parse(wizardData);
+                showInputForm = bool.TrueString.Equals(document.Root.Value, StringComparison.OrdinalIgnoreCase);
             }
-            catch (Exception exception)
+            catch (XmlException ex)
             {
-                MessageBox.Show(exception.ToString());
+                var error = new StringBuilder();
+                error.AppendLine("Could not parse WizardData element.")
+                     .AppendLine()
+                     .Append(ex);
+                MessageBox.Show(error.ToString());
+            }
+
+            if (showInputForm)
+            {
+                try
+                {
+                    ReplacementsDictionary = new Dictionary<string, string>();
+                    var input = new InputForm();
+                    input.ShowDialog();
+                    var businessName = input.BusinessNameString;
+                    var broadPurpose = input.BroadPurpose;
+                    var broadConcept = input.BroadConceptString;
+                    var exposure = input.Exposure;
+                    var specificConcept = input.SpecificConceptString;
+                    ReplacementsDictionary.Add("$businessname$", businessName);
+                    ReplacementsDictionary.Add("$broadpurpose$", broadPurpose);
+                    ReplacementsDictionary.Add("$broadconcept$", broadConcept);
+                    ReplacementsDictionary.Add("$exposure$", exposure);
+                    ReplacementsDictionary.Add("$specificconcept$", specificConcept);
+                    ReplacementsDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
+                    ReplacementsDictionary = CreateSpecificConceptVariations(specificConcept, ReplacementsDictionary);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.ToString());
+                }
+            }
+
+            foreach (var replacementKeyValuePair in ReplacementsDictionary)
+            {
+                replacementsDictionary.Add(replacementKeyValuePair.Key, replacementKeyValuePair.Value);
             }
         }
 

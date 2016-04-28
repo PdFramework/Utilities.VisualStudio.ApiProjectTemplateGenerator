@@ -1,0 +1,33 @@
+﻿{
+    "dependencies": {
+        "VSSDK.DTE": "7.0.4",
+        "VSSDK.GraphModel": "12.0.4",
+        "VSSDK.GraphModel.11": "11.0.2",
+        "VSSDK.IDE": "7.0.4",
+        "VSSDK.IDE.10": "10.0.4",
+        "VSSDK.IDE.11": "11.0.4",
+        "VSSDK.IDE.12": "12.0.4",
+        "VSSDK.IDE.8": "8.0.4",
+        "VSSDK.IDE.9": "9.0.4",
+        "VSSDK.OLE.Interop": "7.0.4",
+        "VSSDK.Shell.11": "11.0.4",
+        "VSSDK.Shell.Immutable.10": "10.0.4",
+        "VSSDK.Shell.Immutable.11": "11.0.4",
+        "VSSDK.Shell.Interop": "7.0.4",
+        "VSSDK.Shell.Interop.10": "10.0.4",
+        "VSSDK.Shell.Interop.11": "11.0.4",
+        "VSSDK.Shell.Interop.8": "8.0.4",
+        "VSSDK.Shell.Interop.9": "9.0.4",
+        "VSSDK.TemplateWizardInterface": "11.0.4",
+        "VSSDK.TemplateWizardInterface.11": "11.0.4",
+        "VSSDK.TextManager.Interop": "7.0.4",
+        "VSSDK.TextManager.Interop.8": "8.0.4"
+    },
+    "frameworks": {
+        "net461": { }
+    },
+    "runtimes": {
+        "win": { }
+    },
+    "supports": { }
+}
