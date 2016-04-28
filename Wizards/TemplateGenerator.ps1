@@ -2,7 +2,7 @@
 
 $CurrentDir = $PSScriptRoot
 $SourcePath = Resolve-Path -Path "..\Projects"
-$DestinationPath = "..\Templates"
+$DestinationPath = "Templates"
 
 $TargetDestination = "$($CurrentDir)\$($DestinationPath)"
 
@@ -201,12 +201,19 @@ Function CopyTemplateIcon()
   }
 }
 
+Function CreateZip()
+{
+  Compress-Archive -Path (Get-ChildItem $TargetDestination | Select -ExpandProperty FullName) -Force -DestinationPath "$($CurrentDir)\ProjectTemplates\Template.zip"
+}
+
 Function GenerateTemplate()
 {
   EnsureDirectoryExists $DestinationPath
   CreateTempFiles
   CreateVsTemplateFiles
   CopyTemplateIcon
+  CreateZip
+  Remove-Item -Recurse -Force $TargetDestination
 }
 
 GenerateTemplate
