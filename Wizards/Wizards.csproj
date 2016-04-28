@@ -80,6 +80,7 @@
     <None Include="packages.config" />
     <None Include="PeinearyDevelopment.snk" />
     <None Include="source.extension.vsixmanifest" />
+    <None Include="TemplateGenerator.ps1" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="InputForm.resx">
@@ -88,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="GAC notes.txt" />
-    <Content Include="__TemplateIcon.ico">
+    <Content Include="PeinearyDevelopment.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
