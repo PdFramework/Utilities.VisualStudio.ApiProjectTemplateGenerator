@@ -35,8 +35,4 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.Staging.config">Web.Staging.config</ProjectItem>
     </Project>
   </TemplateContent>
-  <WizardExtension>
-    <Assembly>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=167e463fe9f95a97</Assembly>
-    <FullClassName>PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards.Wizard</FullClassName>
-  </WizardExtension>
 </VSTemplate>
