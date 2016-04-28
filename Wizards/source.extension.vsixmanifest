@@ -6,7 +6,7 @@
 -->
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="691b0633-4b5c-4933-a534-057155773ee1" Version="1.0" Language="en-US" Publisher="Zackery Peine" />
+    <Identity Id="691b0633-4b5c-4933-a534-057155773ee1" Version="1.0" Language="en-US" Publisher="PeinearyDevelopment" />
     <DisplayName>Api Project</DisplayName>
     <Description xml:space="preserve">An api project.</Description>
     <Icon>PeinearyDevelopment.ico</Icon>
