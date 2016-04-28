@@ -1,9 +1,9 @@
 ﻿{
     "dependencies": {
-        "PeinearyDevelopment.Framework.ApiBases.ApiClient": "1.0.17",
-        "PeinearyDevelopment.Framework.ApiBases.Contracts": "1.0.17",
-        "PeinearyDevelopment.Framework.Endpoints.ApiClient": "1.0.6",
-        "PeinearyDevelopment.Framework.Endpoints.Contracts": "1.0.6",
+        "PeinearyDevelopment.Framework.ApiBases.ApiClient": "1.0.0",
+        "PeinearyDevelopment.Framework.ApiBases.Contracts": "1.0.0",
+        "PeinearyDevelopment.Framework.Endpoints.ApiClient": "1.0.0",
+        "PeinearyDevelopment.Framework.Endpoints.Contracts": "1.0.0",
         "Newtonsoft.Json": "8.0.3",
         "SpecFlow": "2.0.0"
     },
