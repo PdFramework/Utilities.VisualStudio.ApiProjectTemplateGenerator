@@ -49,6 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ChildProjectWizard.cs" />
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>
     </Compile>
