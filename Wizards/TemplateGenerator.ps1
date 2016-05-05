@@ -59,14 +59,14 @@ Function GetTemplateReplacements()
   $TemplateReplacements = New-Object -TypeName System.Collections.Specialized.OrderedDictionary
   $TemplateReplacements.Add($SourcePath, '')
   $TemplateReplacements.Add('PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Projects', '$customnamespace$')
-  $TemplateReplacements.Add('PeinearyDevelopment', '$businessname$')
-  $TemplateReplacements.Add('$businessname$.', 'PeinearyDevelopment.')
-  $TemplateReplacements.Add('BusinessComponents', '$specificconcept$')
-  $TemplateReplacements.Add('BusinessComponent', '$specificconceptsingularized$')
-  $TemplateReplacements.Add('businessComponents', '$pascalspecificconcept$')
-  $TemplateReplacements.Add('businessComponent', '$pascalspecificconceptsingularized$')
-  $TemplateReplacements.Add('business components', '$humanizedspecificconcept$')
-  $TemplateReplacements.Add('business component', '$humanizedspecificconceptsingularized$')
+  $TemplateReplacements.Add('PeinearyDevelopment', '$template.businessname$')
+  $TemplateReplacements.Add('$template.businessname$.', 'PeinearyDevelopment.')
+  $TemplateReplacements.Add('BusinessComponents', '$template.specificconcept$')
+  $TemplateReplacements.Add('BusinessComponent', '$template.specificconceptsingularized$')
+  $TemplateReplacements.Add('businessComponents', '$template.pascalspecificconcept$')
+  $TemplateReplacements.Add('businessComponent', '$template.pascalspecificconceptsingularized$')
+  $TemplateReplacements.Add('business components', '$template.humanizedspecificconcept$')
+  $TemplateReplacements.Add('business component', '$template.humanizedspecificconceptsingularized$')
 
   Return $TemplateReplacements
 }

@@ -56,12 +56,12 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
                     var broadConcept = input.BroadConceptString;
                     var exposure = input.Exposure;
                     var specificConcept = input.SpecificConceptString;
-                    ReplacementsDictionary.Add("$businessname$", businessName);
-                    ReplacementsDictionary.Add("$broadpurpose$", broadPurpose);
-                    ReplacementsDictionary.Add("$broadconcept$", broadConcept);
-                    ReplacementsDictionary.Add("$exposure$", exposure);
-                    ReplacementsDictionary.Add("$specificconcept$", specificConcept);
-                    ReplacementsDictionary.Add("$customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
+                    ReplacementsDictionary.Add("$template.businessname$", businessName);
+                    ReplacementsDictionary.Add("$template.broadpurpose$", broadPurpose);
+                    ReplacementsDictionary.Add("$template.broadconcept$", broadConcept);
+                    ReplacementsDictionary.Add("$template.exposure$", exposure);
+                    ReplacementsDictionary.Add("$template.specificconcept$", specificConcept);
+                    ReplacementsDictionary.Add("$template.customnamespace$", CreateNamespace(new[] { businessName, broadPurpose, broadConcept, exposure, specificConcept }));
                     ReplacementsDictionary = CreateSpecificConceptVariations(specificConcept, ReplacementsDictionary);
                 }
                 catch (Exception exception)
@@ -113,11 +113,11 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
             var vocabulary = Vocabularies.BuildDefault();
             var specificConceptSingularized = vocabulary.Singularize(specificConcept);
 
-            replacementsDictionary.Add("$pascalspecificconcept$", char.ToLower(specificConcept[0]) + specificConcept.Substring(1));
-            replacementsDictionary.Add("$pascalspecificconceptsingularized$", char.ToLower(specificConceptSingularized[0]) + specificConceptSingularized.Substring(1));
-            replacementsDictionary.Add("$specificconceptsingularized$", specificConceptSingularized);
-            replacementsDictionary.Add("$humanizedspecificconcept$", specificConcept.Humanize().ToLower());
-            replacementsDictionary.Add("$humanizedspecificconceptsingularized$", specificConceptSingularized.Humanize().ToLower());
+            replacementsDictionary.Add("$template.pascalspecificconcept$", char.ToLower(specificConcept[0]) + specificConcept.Substring(1));
+            replacementsDictionary.Add("$template.pascalspecificconceptsingularized$", char.ToLower(specificConceptSingularized[0]) + specificConceptSingularized.Substring(1));
+            replacementsDictionary.Add("$template.specificconceptsingularized$", specificConceptSingularized);
+            replacementsDictionary.Add("$template.humanizedspecificconcept$", specificConcept.Humanize().ToLower());
+            replacementsDictionary.Add("$template.humanizedspecificconceptsingularized$", specificConceptSingularized.Humanize().ToLower());
 
             return replacementsDictionary;
         }
