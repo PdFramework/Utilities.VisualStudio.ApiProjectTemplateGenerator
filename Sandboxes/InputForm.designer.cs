@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputForm));
             this.BusinessNameLabel = new System.Windows.Forms.Label();
             this.BroadPurposeOptionsLabel = new System.Windows.Forms.Label();
             this.BroadPurposeOptions = new System.Windows.Forms.ComboBox();
@@ -244,6 +245,7 @@
             this.Controls.Add(this.BroadPurposeOptions);
             this.Controls.Add(this.BroadPurposeOptionsLabel);
             this.Controls.Add(this.BusinessNameLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InputForm";
             this.Text = "ApiTemplateInput";
             this.ExposuresPanel.ResumeLayout(false);
