@@ -1,4 +1,4 @@
-﻿namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Wizards
+﻿namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Sandboxes.InputForms
 {
   partial class InputForm
   {
@@ -188,12 +188,13 @@
             this.GenerateProjectButton.TabIndex = 17;
             this.GenerateProjectButton.Text = "Generate Project";
             this.GenerateProjectButton.UseVisualStyleBackColor = true;
-            this.GenerateProjectButton.Click += new System.EventHandler(this.button1_Click);
+            this.GenerateProjectButton.Click += new System.EventHandler(this.GenerateProjectButton_Click);
             // 
             // ExposuresPanel
             // 
             this.ExposuresPanel.Controls.Add(this.IsInternallyExposedImplementation);
             this.ExposuresPanel.Controls.Add(this.IsExternallyExposedImplementation);
+            this.ExposuresPanel.Enabled = false;
             this.ExposuresPanel.Location = new System.Drawing.Point(490, 194);
             this.ExposuresPanel.Name = "ExposuresPanel";
             this.ExposuresPanel.Size = new System.Drawing.Size(121, 30);

@@ -63,6 +63,7 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
         ExposuresPanelLabel.Enabled = true;
         IsInternallyExposedImplementation.Enabled = true;
         IsExternallyExposedImplementation.Enabled = true;
+        ExposuresPanel.Enabled = true;
 
         SpecificConceptLabel.Enabled = false;
         SpecificConcept.Enabled = false;
@@ -78,6 +79,7 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
         ExposuresPanelLabel.Enabled = false;
         IsInternallyExposedImplementation.Enabled = false;
         IsExternallyExposedImplementation.Enabled = false;
+        ExposuresPanel.Enabled = false;
 
         SpecificConceptLabel.Enabled = true;
         SpecificConcept.Enabled = true;
@@ -86,6 +88,7 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
 
     private void InitializeOptions()
     {
+      BusinessName.Text = "PeinearyDevelopment";
       BroadPurposeOptions.DisplayMember = "Item1";
       BroadPurposeOptions.ValueMember = "Item2";
       BroadPurposeOptions.DataSource = new[]
@@ -98,54 +101,78 @@ namespace PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator
       BroadPurposeOptions.SelectedIndex = 0;
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void GenerateProjectButton_Click(object sender, EventArgs e)
     {
-      BusinessNameString = BusinessName.Text;
-      BroadPurpose = ((Tuple<string, string>)BroadPurposeOptions.SelectedItem).Item2;
+        if (!ValidateForm()) return;
 
-      if (HasBroadConcept.Checked)
-      {
-        var broadConcept = BroadConcept.Text;
-        if (string.IsNullOrWhiteSpace(broadConcept))
-        {
-          BroadConcept.BackColor = Color.LightPink;
-          return;
-        }
-        BroadConceptString = broadConcept;
-        BroadConcept.BackColor = Color.White;
-      }
-      else
-      {
-        BroadConceptString = string.Empty;
-        BroadConcept.BackColor = Color.White;
-      }
+        BusinessNameString = BusinessName.Text;
+        BroadPurpose = ((Tuple<string, string>)BroadPurposeOptions.SelectedItem).Item2;
+        BroadConceptString = HasBroadConcept.Checked ? BroadConcept.Text : string.Empty;
 
-      if (HasMultipleExposures.Checked)
-      {
-        if (!IsInternallyExposedImplementation.Checked && !IsExternallyExposedImplementation.Checked)
+        if (HasMultipleExposures.Enabled && HasMultipleExposures.Checked)
         {
-          ExposuresPanel.BackColor = Color.LightPink;
-          return;
+            if (IsInternallyExposedImplementation.Checked) Exposure = "Internal";
+            if (IsExternallyExposedImplementation.Checked) Exposure = "External";
+            if ((IsInternallyExposedImplementation.Checked && IsExternallyExposedImplementation.Checked) || (!IsInternallyExposedImplementation.Checked && !IsExternallyExposedImplementation.Checked)) throw new Exception();
         }
-        if (IsInternallyExposedImplementation.Checked)
+        else
         {
-          Exposure = "Internal";
+            Exposure = string.Empty;
         }
 
-        if (IsExternallyExposedImplementation.Checked)
-        {
-          Exposure = "External";
-        }
-        ExposuresPanel.BackColor = Color.White;
-      }
-      else
-      {
-        Exposure = string.Empty;
-        ExposuresPanel.BackColor = Color.White;
-      }
+        SpecificConceptString = SpecificConcept.Text;
 
-      SpecificConceptString = SpecificConcept.Text;
-      Dispose();
+        Dispose();
+    }
+
+    /// <summary>
+    /// Validates the user's input from the form.
+    /// </summary>
+    /// <returns>boolean: Indicating whether or not the form is valid.</returns>
+    private bool ValidateForm()
+    {
+        var formIsValid = true;
+        if (string.IsNullOrWhiteSpace(BusinessName.Text))
+        {
+            BusinessName.BackColor = Color.LightPink;
+            formIsValid = false;
+        }
+        else
+        {
+            BusinessName.BackColor = default(Color);
+        }
+
+        if (HasBroadConcept.Checked && string.IsNullOrWhiteSpace(BroadConcept.Text))
+        {
+            BroadConcept.BackColor = Color.LightPink;
+            formIsValid = false;
+        }
+        else
+        {
+            BroadConcept.BackColor = default(Color);
+        }
+
+        if (HasMultipleExposures.Enabled && HasMultipleExposures.Checked && !IsInternallyExposedImplementation.Checked && !IsExternallyExposedImplementation.Checked)
+        {
+            ExposuresPanel.BackColor = Color.LightPink;
+            formIsValid = false;
+        }
+        else
+        {
+            ExposuresPanel.BackColor = default(Color);
+        }
+
+        if (SpecificConcept.Enabled && string.IsNullOrWhiteSpace(SpecificConcept.Text))
+        {
+            SpecificConcept.BackColor = Color.LightPink;
+            formIsValid = false;
+        }
+        else
+        {
+            SpecificConcept.BackColor = default(Color);
+        }
+
+        return formIsValid;
     }
   }
 }
