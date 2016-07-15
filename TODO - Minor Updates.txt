@@ -1,0 +1,44 @@
+1
+Update AutoMapperConfig from:
+        public static void Configure()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<BusinessComponentDto, BusinessComponent>();
+                cfg.CreateMap<BusinessComponent, BusinessComponentDto>();
+            });
+
+            Mapper = config.CreateMapper();
+        }
+to:
+        public static void Configure()
+        {
+            Mapper = new MapperConfiguration(cfg => { cfg.AddConditionalObjectMapper().Where((s, d) => s.Name == d.Name + "Dto"); }).CreateMapper();
+        }
+
+2
+Update UnityConfig from:
+        public static void RegisterComponents()
+        {
+            var container = new UnityContainer();
+
+            container.RegisterType<DbContext, BusinessComponentsDbContext>();
+
+            container.RegisterType<IBusinessComponentsDal, BusinessComponentsDal>();
+
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+        }
+to:
+        public static void RegisterComponents()
+        {
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(new UnityContainer().RegisterTypes(AllClasses.FromAssemblies(Assembly.Load("PeinearyDevelopment.Utilities.VisualStudio.ApiProjectTemplateGenerator.Projects.DataAccess")), WithMappings.FromAllInterfacesInSameAssembly));
+        }
+
+3
+Update Config file. All classes inside should have namespace updated to include .Config at the end.
+
+4
+Insert newline after Dal constructor and Update methods.
+
+5
+Update all usings to be contained in namespace, not outside of namespace.
